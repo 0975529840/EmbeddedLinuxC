@@ -1,3 +1,4 @@
+#Makefile for build normal project
 CC := gcc
 CFLAGS := -I./inc
 OBJ_DIR := obj
