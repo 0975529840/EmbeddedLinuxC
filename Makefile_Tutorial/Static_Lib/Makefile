@@ -8,7 +8,7 @@ INC_FILES := inc/hello.h
 BIN_DIR := bin
 STATIC_LIB_DIR:= bin/static
 SHARED_LIB_DIR:= bin/shared
-OUTPUT_DIR := $(BIN_DIR) $(OBJ_DIR) $(STATIC_LIB_DIR)
+OUTPUT_DIR := $(BIN_DIR) $(OBJ_DIR) $(STATIC_LIB_DIR) $(SHARED_LIB_DIR)
 OUTPUT_NAME := main
 
 build: $(INC_FILES) | $(OUTPUT_DIR)
@@ -37,6 +37,7 @@ all: obj/main.o
 #
 # sudo mv bin/shared/libtq84.so /usr/lib
 # sudo chmod 755 /usr/lib/libtq84.so
+$(SHARED_LIB_DIR): ; @mkdir -p $@
 $(STATIC_LIB_DIR): ; @mkdir -p $@
 $(BIN_DIR): ; @mkdir -p $@
 $(OBJ_DIR): ; @mkdir -p $@
