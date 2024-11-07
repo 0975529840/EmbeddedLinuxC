@@ -7,6 +7,7 @@ OBJ_FILES := obj/main.o obj/hello.o
 INC_FILES := inc/hello.h
 BIN_DIR := bin
 STATIC_LIB_DIR:= bin/static
+SHARED_LIB_DIR:= bin/shared
 OUTPUT_DIR := $(BIN_DIR) $(OBJ_DIR) $(STATIC_LIB_DIR)
 OUTPUT_NAME := main
 
@@ -27,7 +28,7 @@ all: obj/main.o
 	gcc obj/main.o -L$(STATIC_LIB_DIR) -lhello -o bin/statically-linked
 # Step 1
 # 	Build executive file With share library
-# gcc obj/main.o -Lbin/shared -lhello -o bin/user-shared-library
+# gcc obj/main.o -L$(SHARED_LIB_DIR) -lhello -o bin/user-shared-library
 # set-up LD_LIBRARY_PATH in /usr/lib
 # LD_LIBRARY_PATH=$(pwd)/bin/shared bin/use-shared-library
 # Step 2
